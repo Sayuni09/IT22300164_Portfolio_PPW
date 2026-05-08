@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sayuni Ellepola - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── CURSOR ─── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ─── SIDE NAV DOTS ─── -->
+  <nav class="sidenav" id="sidenav">
+    <a href="#hero"   class="sn-dot active" data-label="Cover"><span></span></a>
+    <a href="#intro"  class="sn-dot" data-label="Introduction"><span></span></a>
+    <a href="#journal"class="sn-dot" data-label="Reflective Journal"><span></span></a>
+    <a href="#career" class="sn-dot" data-label="Career Plan"><span></span></a>
+    <a href="#cv"     class="sn-dot" data-label="Curriculum Vitae"><span></span></a>
+    <a href="#cert"   class="sn-dot" data-label="Certificate"><span></span></a>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <canvas id="meshCanvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="pill">AI Innovation Explorer</span>
+          <span class="pill pill-outline">IT22300164</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-line" style="--d:0.05s">Sayuni</span>
+          <span class="name-line accent" style="--d:0.15s">Ellepola</span>
+        </h1>
+
+        <p class="hero-tagline" style="--d:0.3s">
+          Final Year · BSc (Hons) Information Technology · Full-Stack Developer
+        </p>
+
+        <div class="hero-contacts" style="--d:0.42s">
+          <a class="contact-chip" href="mailto:sayuniellepola@gmail.com">
+            <i data-lucide="mail"></i> sayuniellepola@gmail.com
+          </a>
+          <span class="contact-chip">
+            <i data-lucide="map-pin"></i> Western Province, Sri Lanka
+          </span>
+          <a class="contact-chip" href="#">
+            <i data-lucide="linkedin"></i> in/sayuni-ellepola
+          </a>
+        </div>
+
+        <div class="hero-index" style="--d:0.55s">
+          <a href="#intro"   class="idx-link"><span class="idx-n">01</span><span>Introduction</span><i data-lucide="arrow-right"></i></a>
+          <a href="#journal" class="idx-link"><span class="idx-n">02</span><span>Reflective Journal</span><i data-lucide="arrow-right"></i></a>
+          <a href="#career"  class="idx-link"><span class="idx-n">03</span><span>Career Plan</span><i data-lucide="arrow-right"></i></a>
+          <a href="#cv"      class="idx-link"><span class="idx-n">04</span><span>Curriculum Vitae</span><i data-lucide="arrow-right"></i></a>
+          <a href="#cert"    class="idx-link"><span class="idx-n">05</span><span>Certificate</span><i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE GRAPHIC -->
+      <div class="hero-right">
+        <div class="hero-graphic">
+          <svg class="hg-svg" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer rotating ring -->
+            <circle class="hg-ring-outer" cx="210" cy="210" r="190" stroke="rgba(124,58,237,0.18)" stroke-width="1" stroke-dasharray="6 10"/>
+            <!-- Middle ring -->
+            <circle class="hg-ring-mid" cx="210" cy="210" r="148" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="3 8"/>
+            <!-- Inner glow only, no circle fill -->
+            <circle cx="210" cy="210" r="100" fill="url(#glow1)" opacity="0.7"/>
+            <!-- Orbit dots -->
+            <circle class="hg-orb1" cx="210" cy="20" r="6" fill="#7C3AED"/>
+            <circle class="hg-orb2" cx="400" cy="210" r="5" fill="#F59E0B" opacity="0.8"/>
+            <circle class="hg-orb3" cx="210" cy="400" r="4" fill="#7C3AED" opacity="0.6"/>
+            <circle class="hg-orb4" cx="20" cy="210" r="5" fill="#F59E0B" opacity="0.5"/>
+            <!-- Skill nodes — evenly spaced around the graphic -->
+            <g class="hg-node" transform="translate(46, 100)">
+              <rect x="-38" y="-14" width="76" height="28" rx="14" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.4)" stroke-width="1"/>
+              <text x="0" y="5" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)" font-family="Syne, sans-serif" font-weight="600">React.js</text>
+            </g>
+            <g class="hg-node" transform="translate(374, 100)">
+              <rect x="-38" y="-14" width="76" height="28" rx="14" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.35)" stroke-width="1"/>
+              <text x="0" y="5" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)" font-family="Syne, sans-serif" font-weight="600">Flutter</text>
+            </g>
+            <g class="hg-node" transform="translate(374, 310)">
+              <rect x="-44" y="-14" width="88" height="28" rx="14" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.4)" stroke-width="1"/>
+              <text x="0" y="5" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)" font-family="Syne, sans-serif" font-weight="600">Spring Boot</text>
+            </g>
+            <g class="hg-node" transform="translate(46, 310)">
+              <rect x="-38" y="-14" width="76" height="28" rx="14" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.35)" stroke-width="1"/>
+              <text x="0" y="5" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)" font-family="Syne, sans-serif" font-weight="600">Node.js</text>
+            </g>
+            <g class="hg-node" transform="translate(210, 18)">
+              <rect x="-30" y="-12" width="60" height="24" rx="12" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.5)" stroke-width="1"/>
+              <text x="0" y="4" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.9)" font-family="Syne, sans-serif" font-weight="700">Azure</text>
+            </g>
+            <g class="hg-node" transform="translate(210, 402)">
+              <rect x="-32" y="-12" width="64" height="24" rx="12" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+              <text x="0" y="4" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.9)" font-family="Syne, sans-serif" font-weight="700">MySQL</text>
+            </g>
+            <defs>
+              <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+          <!-- Floating tech tags — repositioned to clear corners away from SVG nodes -->
+          <div class="hg-float hg-float--1"><i data-lucide="code-2"></i> Full-Stack</div>
+          <div class="hg-float hg-float--2"><i data-lucide="brain-circuit"></i> AI / ML</div>
+          <div class="hg-float hg-float--3"><i data-lucide="cloud"></i> Cloud</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint"><i data-lucide="chevron-down"></i></div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       01 INTRODUCTION
+  ══════════════════════════════════ -->
+  <section id="intro" class="section">
+    <div class="sec-label"><span>01</span> Introduction</div>
+
+    <div class="intro-layout">
+      <div class="intro-avatar-col">
+        <div class="avatar-frame">
+          <div class="av-glow"></div>
+          <img src="assets/photo.jpg" alt="Sayuni Ellepola" class="av-photo"/>          <div class="av-ring"></div>
+        </div>
+        <div class="badge-stack">
+          <div class="badge"><i data-lucide="code-2"></i> Full-Stack Developer</div>
+          <div class="badge"><i data-lucide="brain-circuit"></i> AI Enthusiast</div>
+          <div class="badge"><i data-lucide="cloud"></i> Cloud Computing</div>
+          <div class="badge"><i data-lucide="users"></i> Team Leader</div>
+        </div>
+      </div>
+
+      <div class="intro-text-col">
+        <h2 class="sec-title">Hello, I'm<br><em>Sayuni.</em></h2>
+
+        <p class="intro-p">I'm a final-year Information Technology student at SLIIT, currently in my second semester with a GPA of 3.65. My passion is building things that work beautifully, from full-stack web and mobile applications to AI-driven solutions and cloud-integrated systems. Code is how I think and design is how I communicate.</p>
+
+        <p class="intro-p">I'm multilingual, naturally curious and not afraid of challenges, whether that's leading cybersecurity awareness sessions, collaborating across cross-functional teams or picking up German from scratch. I believe a great professional never stops learning, and I carry that mindset into everything I do.</p>
+
+        <div class="mission-card">
+          <i data-lucide="target"></i>
+          <p><strong>Mission -</strong> Build technology that solves real problems. Communicate ideas with clarity. Lead with both competence and empathy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       02 REFLECTIVE JOURNAL
+  ══════════════════════════════════ -->
+  <section id="journal" class="section section-dark">
+    <div class="sec-label light"><span>02</span> Reflective Journal</div>
+    <h2 class="sec-title light">Reflective<br><em>Journal</em></h2>
+
+    <!-- Week tabs -->
+    <div class="week-tabs">
+      <button class="wtab active" data-week="1">Week 1</button>
+      <button class="wtab" data-week="2">Week 2</button>
+      <button class="wtab" data-week="3">Week 3</button>
+      <button class="wtab" data-week="4">Week 4</button>
+      <button class="wtab" data-week="5">Week 5</button>
+      <button class="wtab" data-week="6">Week 6</button>
+      <button class="wtab" data-week="7">Week 7</button>
+    </div>
+
+    <!-- Journal panels -->
+    <div class="journal-panels">
+
+      <div class="jpanel active" data-week="1">
+        <div class="jp-header">
+          <div class="jp-week-num">01</div>
+          <div>
+            <h3 class="jp-title">Introduction to the PPW Module</h3>
+            <p class="jp-topic"><i data-lucide="book-open"></i> Module overview, assessments &amp; expectations</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>Our lecturer walked us through the module structure, assessment breakdown and expectations. We learned PPW has no final exam. We have a quiz (20%), portfolio (50%) and mock interview (30%).</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>I honestly didn't expect much at first. But hearing about the portfolio and live interview made it feel very personal and real, bringinga mix of nerves and quiet excitement.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>The session was well-organized and gave me a clear picture of what lay ahead. The only thing that unsettled me was realising I had never built a professional portfolio before.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>My nervousness came from having to present myself, including my goals, skills and personality. That felt quite exposing. However, I realized that this is exactly what the professional world requires.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>PPW is not just another module. It's designed to build my professional identity from the ground up. That reframe changed everything.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>I decided to take every session seriously and start collecting portfolio materials early rather than scrambling at the deadline.</p></div>
+        </div>
+      </div>
+
+      <div class="jpanel" data-week="2">
+        <div class="jp-header">
+          <div class="jp-week-num">02</div>
+          <div>
+            <h3 class="jp-title">Presentation Skills</h3>
+            <p class="jp-topic"><i data-lucide="presentation"></i> Structure · Signposting · Body language · Slide design</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>We covered the three-part structure (beginning, middle, end), signposting phrases, slide design rules and the five body language elements (eyes, voice, expression, appearance and posture).</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>Presentations have always made me anxious. This session felt relevant and slightly nerve-wracking, but I was relieved the techniques were practical and immediately applicable.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>Learning signposting phrases like 'Moving on, I'd like to look at…' was my top takeaway. I also realised I'd been making my slides far too text-heavy.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>My past struggles came from ignoring delivery and focusing only on content. A clear structure and rehearsed signposting makes a huge difference to how an audience experiences a talk.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>A strong conclusion matters as much as a good opening. Because the audience remembers the last thing you say. That was a genuinely new insight for me.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>I'll limit each slide to 3-5 points, rehearse aloud at least three times and record myself once to review my own body language before any future presentation.</p></div>
+        </div>
+      </div>
+
+      <div class="jpanel" data-week="3">
+        <div class="jp-header">
+          <div class="jp-week-num">03</div>
+          <div>
+            <h3 class="jp-title">Business Writing &amp; Formal Letter Writing</h3>
+            <p class="jp-topic"><i data-lucide="pen-line"></i> Clarity · Conciseness · Formal letter formats</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>We explored the principles of professional business writing and learned to write formal letters including complaints, invitations, apologies and job applications, all in correct format.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>Switching from casual messaging to formal writing felt like a gear change. A few in-class activity answers came out too informal, but a very useful wake-up call.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>The rewriting exercises were the most effective part. Seeing 'obtain' instead of 'get' in side-by-side comparison made the difference in tone instantly obvious.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>I had been underestimating how much written communication shapes first impressions at work. Professional writing is a conscious skill that doesn't happen automatically.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>Every sentence in a business document must serve the reader. Polite, concise language builds trust far better than vague or informal writing ever could.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>Before every professional email or letter, I will make sure it is formal, concise and properly proofread. I will also practise writing one formal letter each week based on different scenarios.</p></div>
+        </div>
+      </div>
+
+      <div class="jpanel" data-week="4">
+        <div class="jp-header">
+          <div class="jp-week-num">04</div>
+          <div>
+            <h3 class="jp-title">Email Writing &amp; Memo Writing</h3>
+            <p class="jp-topic"><i data-lucide="mail"></i> Netiquette · Email structure · Memo format</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>This session built on last week's writing skills, focusing on professional email structure  and memo writing using the TO/FROM/DATE/SUBJECT format.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>Email felt immediately relevant since I already email lecturers. But I quickly realised I'd been skipping subject lines and using informal greetings. Memo writing was completely new territory.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>Ready-made email phrases like 'I am writing with reference to…' gave me a toolkit I can use right away. The memo format was also very clear. However, I wish we had spent more time learning how to politely follow up on unanswered emails.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>Professional email isn't optional. It's expected. One poorly written email can damage your reputation as much as a poor letter. I hadn't been treating emails seriously enough.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>Netiquette - replying promptly, using clear subject lines, maintaining a professional tone, is just as important as the writing itself.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>Proper greetings and subject lines in every email from now on. I'll also set up a professional email signature with my name, programme and contact details.</p></div>
+        </div>
+      </div>
+
+      <div class="jpanel" data-week="5">
+        <div class="jp-header">
+          <div class="jp-week-num">05</div>
+          <div>
+            <h3 class="jp-title">Telephone Etiquette</h3>
+            <p class="jp-topic"><i data-lucide="phone-call"></i> Introduction · Purpose · Conclusion · Tone of voice</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>We covered the three elements of a business call, plus best practices for tone, clarity, active listening and handling wrong numbers, transfers and message-taking.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>I was genuinely surprised that phone skills need formal training. Reflecting honestly on my own professional calls, I realised my tone and pacing needed real work.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>The insight that a monotone voice signals disinterest to the caller was the most impactful moment. The tips on scheduling and planning calls were also very practical.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>Phone calls are harder than face-to-face because body language is invisible. That puts far more weight on tone, word choice and pace which is something I had never consciously considered.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>A professional phone call deserves the same care as any written document. Every caller should leave the interaction feeling respected, heard and helped.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>I'll practise mock professional calls with a friend and script a confident opening phrase, so I never fumble at the start of a business call again.</p></div>
+        </div>
+      </div>
+
+      <div class="jpanel" data-week="6">
+        <div class="jp-header">
+          <div class="jp-week-num">06</div>
+          <div>
+            <h3 class="jp-title">Report Writing</h3>
+            <p class="jp-topic"><i data-lucide="file-bar-chart"></i> Information · Research · Proposal reports · Groan Factor</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>We studied the purpose, types and structure of professional reports covering title page, executive summary, intro, body, conclusions and bibliography. The 'GROAN FACTOR' concept stood out.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>Report writing felt rigid at first, but the session reframed it as a craft. The concept of the executive summary being written last but placed first was genuinely clever and something I had never considered before.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>'It's all about the reader' was the one phrase changed how I think about writing. I recognised several errors I'd made in past reports, including no clear aim, no summary, too much irrelevant information.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>Poor report writing happens when writers focus on what they know rather than what the reader needs. Editing and cutting are just as important as the initial writing.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>Always ask - 'Who is reading this, and what do they actually need?' The executive summary is the most critical page of any long report.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>Define purpose and audience before writing. Draft the executive summary last. Ask a peer to review structure, not just grammar, before every future report.</p></div>
+        </div>
+      </div>
+
+      <div class="jpanel" data-week="7">
+        <div class="jp-header">
+          <div class="jp-week-num">07</div>
+          <div>
+            <h3 class="jp-title">How to Face an Interview</h3>
+            <p class="jp-topic"><i data-lucide="briefcase"></i> Interview types · STAR method · Non-verbal communication</p>
+          </div>
+        </div>
+        <div class="gibbs-grid">
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="file-text"></i></div><h4>Description</h4><p>We covered interview types, including in-person, panel, behavioural, technical, case study, virtual, along with what employers assess, non-verbal communication techniques and strategies for answering questions. We ended with a mock interview.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="heart"></i></div><h4>Feelings</h4><p>Interviews genuinely terrify me. But learning that preparation and body language are entirely within my control made the whole thing feel far more manageable.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="scale"></i></div><h4>Evaluation</h4><p>The STAR method (Situation, Task, Action, Result) gave me a real framework for behavioural questions. The most valuable part of the entire session.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="search"></i></div><h4>Analysis</h4><p>My fear came from uncertainty. Now I understand employers are assessing fit, communication and problem-solving, rather thantrying to catch me out. That shift in perspective changes everything.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="check-circle"></i></div><h4>Conclusion</h4><p>Interview success is preparation, not luck. Answers, body language, appearance and even the questions you ask. All of it can be planned in advance.</p></div>
+          <div class="gibbs-card"><div class="gc-icon"><i data-lucide="clipboard-list"></i></div><h4>Action Plan</h4><p>I'll prepare STAR-format answers for common questions, practise in front of a mirror and conduct at least two full mock interviews before the formal assessment.</p></div>
+        </div>
+      </div>
+
+    </div><!-- /journal-panels -->
+
+    <!-- Overall reflection -->
+    <div class="reflection-banner">
+      <div class="rb-quote"><i data-lucide="quote"></i></div>
+      <div class="rb-text">
+        <h3>Overall Reflection</h3>
+        <p>Seven sessions in, PPW changed how I see myself as a future professional. I used to think communication skills were secondary to technical knowledge. Now I understand they are what allow technical knowledge to be <em>seen</em> at all. The biggest shift has been becoming more intentional. I think before I write, plan before I speak and always consider my audience.</p>
+        <p class="rb-kicker">In the professional world, <strong>how you communicate matters just as much as what you know.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       03 CAREER DEVELOPMENT PLAN
+  ══════════════════════════════════ -->
+  <section id="career" class="section">
+    <div class="sec-label"><span>03</span> Career Development Plan</div>
+    <h2 class="sec-title">Career<br><em>Development Plan</em></h2>
+    <p class="sec-sub">From where I am now to where I intend to be.</p>
+
+    <!-- Timeline -->
+    <h3 class="block-title">SMART Goals - Career Roadmap</h3>
+    <div class="tl-wrap">
+      <div class="tl-line"></div>
+
+      <div class="tl-item">
+        <div class="tl-node now"><i data-lucide="flag"></i></div>
+        <div class="tl-card">
+          <span class="tl-badge">Now — Jul 2026</span>
+          <h4>Graduation</h4>
+          <p>Complete my final semester at SLIIT and graduate with my BSc (Hons) in Information Technology. Currently maintaining a GPA of 3.65 with focused effort going into the final stretch.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-node short"><i data-lucide="briefcase"></i></div>
+        <div class="tl-card">
+          <span class="tl-badge">6 months</span>
+          <h4>Land a Full-Stack / Software Engineering Role</h4>
+          <p>Apply to 10+ companies per month with a polished portfolio and CV. Internship experience and project portfolio make this realistic. Target: employed within 6 months of graduation.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-node mid"><i data-lucide="cloud"></i></div>
+        <div class="tl-card">
+          <span class="tl-badge">1 year</span>
+          <h4>Complete AWS / Azure Cloud Certification</h4>
+          <p>Pass the AWS Solutions Architect Associate or Azure Developer Associate exam. 8 hours/week of study. Azure exposure from internship gives me a running start.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-node mid"><i data-lucide="brain-circuit"></i></div>
+        <div class="tl-card">
+          <span class="tl-badge">2 years</span>
+          <h4>Deepen Expertise in AI &amp; Machine Learning</h4>
+          <p>I've already started exploring the AI and ML space and have a growing foundation in it. Over the next two years, I aim to go deeper by completing a specialization and shipping meaningful AI-powered projects that reflect real-world application.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-node long"><i data-lucide="star"></i></div>
+        <div class="tl-card">
+          <span class="tl-badge">5 years</span>
+          <h4>Senior Engineer / Tech Lead Role</h4>
+          <p>Transition into a lead engineering role by owning architecture decisions, mentoring juniors and managing delivery. Leadership foundation already built through university and internship experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills developing -->
+    <h3 class="block-title">Skills in Progress</h3>
+    <div class="skills-prog">
+      <div class="sp-item">
+        <div class="sp-top"><i data-lucide="brain-circuit"></i><span>Machine Learning &amp; AI</span><span class="sp-pct">45%</span></div>
+        <div class="sp-bar"><div class="sp-fill" style="--w:45%"></div></div>
+        <span class="sp-status">In Progress</span>
+      </div>
+      <div class="sp-item">
+        <div class="sp-top"><i data-lucide="cloud"></i><span>Cloud Architecture (AWS/Azure)</span><span class="sp-pct">55%</span></div>
+        <div class="sp-bar"><div class="sp-fill" style="--w:55%"></div></div>
+        <span class="sp-status">Intermediate</span>
+      </div>
+      <div class="sp-item">
+        <div class="sp-top"><i data-lucide="mic"></i><span>Public Speaking &amp; Presentation</span><span class="sp-pct">65%</span></div>
+        <div class="sp-bar"><div class="sp-fill" style="--w:65%"></div></div>
+        <span class="sp-status">Growing</span>
+      </div>
+      <div class="sp-item">
+        <div class="sp-top"><i data-lucide="languages"></i><span>German Language</span><span class="sp-pct">20%</span></div>
+        <div class="sp-bar"><div class="sp-fill" style="--w:20%"></div></div>
+        <span class="sp-status">A1 Beginner</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       04 CURRICULUM VITAE
+  ══════════════════════════════════ -->
+  <section id="cv" class="section section-dark">
+    <div class="sec-label light"><span>04</span> Curriculum Vitae</div>
+    <h2 class="sec-title light">Curriculum<br><em>Vitae</em></h2>
+
+    <div class="cv-layout">
+      <!-- Sidebar -->
+      <aside class="cv-aside">
+        <img src="assets/photo.jpg" alt="Sayuni Ellepola" class="cva-avatar-photo"/>   <!-- ← YOUR IMAGE -->
+        <h3 class="cva-name">Sayuni Ellepola</h3>
+        <p class="cva-role">Final Year IT Student</p>
+
+        <div class="cva-block">
+          <h5><i data-lucide="contact"></i> Contact</h5>
+          <p><i data-lucide="mail"></i> sayuniellepola@gmail.com</p>
+          <p><i data-lucide="map-pin"></i> Western Province, Sri Lanka</p>
+          <p><i data-lucide="linkedin"></i> in/sayuni-ellepola</p>
+        </div>
+
+        <div class="cva-block">
+          <h5><i data-lucide="code-2"></i> Tech Skills</h5>
+          <div class="cv-chips">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React.js</span>
+            <span>Node.js</span><span>Flutter</span><span>Spring Boot</span><span>Java</span>
+            <span>Kotlin</span><span>PHP</span><span>Bootstrap</span><span>MySQL</span>
+            <span>MongoDB</span><span>Azure</span>
+          </div>
+        </div>
+
+        <div class="cva-block">
+          <h5><i data-lucide="sparkles"></i> Soft Skills</h5>
+          <div class="cv-chips soft">
+            <span>Leadership</span><span>Communication</span><span>Problem Solving</span>
+            <span>Creativity</span><span>Adaptability</span><span>Time Management</span>
+          </div>
+        </div>
+
+        <div class="cva-block">
+          <h5><i data-lucide="languages"></i> Languages</h5>
+          <p><i data-lucide="circle-dot"></i> Sinhala - Native</p>
+          <p><i data-lucide="circle-dot"></i> English - Professional</p>
+          <p><i data-lucide="circle-dot"></i> Tamil - Working</p>
+          <p><i data-lucide="circle-dot"></i> German - A1 Beginner</p>
+        </div>
+
+        <div class="cva-block">
+          <h5><i data-lucide="compass"></i> Interests</h5>
+          <p>Full-Stack Development</p>
+          <p>Machine Learning &amp; AI</p>
+          <p>Cloud Computing</p>
+          <p>Data Analysis</p>
+        </div>
+      </aside>
+
+      <!-- Main CV -->
+      <div class="cv-main">
+        <div class="cv-summary-box">
+          <p>A swift learner with a creative mindset, passionate about full-stack development, AI-driven solutions and cloud technologies. Proven leader and collaborator, consistently delivering high-quality, scalable solutions with a positive and adaptive approach.</p>
+        </div>
+
+        <div class="cv-sec">
+          <h4 class="cv-sec-title"><i data-lucide="graduation-cap"></i> Education</h4>
+          <div class="cv-entry">
+            <div class="cv-entry-hd">
+              <span>BSc (Hons) Information Technology - Specializing in IT</span>
+              <span class="cv-date">Expected 2026</span>
+            </div>
+            <span class="cv-inst">SLIIT, Malabe · GPA: 3.65 · Final Year</span>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-hd">
+              <span>G.C.E Advanced Level - Physical Science</span>
+              <span class="cv-date">2022</span>
+            </div>
+            <span class="cv-inst">Viharamahadevi Balika Vidyalaya, Kiribathgoda · Z-Score: 1.1130 · 1B, 2Cs</span>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-hd">
+              <span>G.C.E Ordinary Level</span>
+              <span class="cv-date">2018</span>
+            </div>
+            <span class="cv-inst">Viharamahadevi Balika Vidyalaya, Kiribathgoda · 9A's · English Medium</span>
+          </div>
+        </div>
+
+        <div class="cv-sec">
+          <h4 class="cv-sec-title"><i data-lucide="briefcase"></i> Experience</h4>
+          <div class="cv-entry">
+            <div class="cv-entry-hd">
+              <span>Trainee Software Engineer</span>
+              <span class="cv-date">Oct 2024 - Apr 2025</span>
+            </div>
+            <span class="cv-inst">CEAT Kelani Holdings (Pvt) Ltd. · Kelaniya, Sri Lanka</span>
+            <ul class="cv-bul">
+              <li>Developed enterprise software applications using modern frameworks to optimise business processes.</li>
+              <li>Designed intuitive UI and interactive prototypes in Figma to enhance user experience.</li>
+              <li>Collaborated with cross-functional teams of 6-8 members using Agile methodologies across the full SDLC.</li>
+              <li>Gained expertise in database management, API integration, version control and Azure cloud deployment.</li>
+              <li>Led cybersecurity awareness sessions for 100+ non-technical staff, improving organisational security posture.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-sec">
+          <h4 class="cv-sec-title"><i data-lucide="rocket"></i> Projects</h4>
+          <div class="cv-entry">
+            <div class="cv-entry-hd"><span>Dealer App · CEAT Kelani Holdings</span><span class="cv-date">Oct 2024 - Apr 2025</span></div>
+            <ul class="cv-bul">
+              <li>Mobile app serving 200+ dealers - finance tracking, achievements dashboard, operations management.</li>
+              <li>Built chart analytics, PDF generation, search, and data visualisation features.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-hd"><span>Vendor Management Portal · CEAT Kelani Holdings</span><span class="cv-date">Feb 2024 - Jan 2025</span></div>
+            <ul class="cv-bul">
+              <li>Centralised vendor activities, reducing email communication by 70%.</li>
+              <li>Built real-time chat system and automated onboarding workflows.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-hd"><span>AutoShed - Smart Presentation Scheduling System · SLIIT</span><span class="cv-date">Feb - May 2025</span></div>
+            <ul class="cv-bul">
+              <li>Role-based access, conflict-free scheduling, calendar UI, automated email/WhatsApp notifications.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-hd"><span>GrowtHive - Skill Sharing &amp; Learning Platform · SLIIT</span><span class="cv-date">Feb - May 2025</span></div>
+            <ul class="cv-bul">
+              <li>Social learning platform with OAuth 2.0, skill posts, likes, comments and follow/unfollow features.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       05 CERTIFICATE
+  ══════════════════════════════════ -->
+  <section id="cert" class="section">
+    <div class="sec-label"><span>05</span> Certificates</div>
+    <h2 class="sec-title">Certificates of<br><em>Achievement</em></h2>
+    <p class="sec-sub">Proof of learning and achievement</p>
+
+    <div class="cert-wrap">
+      <div class="cert-card">
+        <div class="cert-shine"></div>
+        <div class="cert-top">
+          <i data-lucide="award"></i>
+          <span class="cert-tag">Certificate of Completion</span>
+        </div>
+        <h3 class="cert-name">AWS SimuLearn: Core Security Concepts</h3>
+        <p class="cert-platform"><i data-lucide="building"></i>Platform - AWS Skill Builder</p>
+        <!-- <p class="cert-desc">Description of the first certificate.</p> -->
+        <div class="cert-meta-row">
+          <span><i data-lucide="calendar"></i> Completed: October 2025</span>
+          <span><i data-lucide="clock"></i> Duration: 2 hrs</span>
+        </div>
+        <img src="assets\course1.png" alt="Certificate" class="cert-img"/>
+      </div>
+
+      <!-- ── Certificate 2 ── -->
+  <div class="cert-card">
+    <div class="cert-shine"></div>
+    <div class="cert-top">
+      <i data-lucide="award"></i>
+      <span class="cert-tag">Certificate of Completion</span>
+    </div>
+    <h3 class="cert-name">Describe Azure Identity, Access and Security</h3>
+    <p class="cert-platform"><i data-lucide="building"></i>Platform - Azure Student</p>
+    <!-- <p class="cert-desc">Description of second certificate.</p> -->
+    <div class="cert-meta-row">
+      <span><i data-lucide="calendar"></i> Completed: October 2025</span>
+      <span><i data-lucide="clock"></i> Duration: 2 hours</span>
+    </div>
+    <img src="assets\course2.png" alt="Certificate 2" class="cert-img"/>
+  </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Sayuni Ellepola</span>
+      <span> SLIIT · 2025 / 2026</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
